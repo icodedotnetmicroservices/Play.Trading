@@ -10,11 +10,11 @@ namespace Play.Trading.Service.StateMachines
         public State Completed { get; }
         public State Faulted { get; }
 
-        protected PurchaseStateMachine()
+        public PurchaseStateMachine()
         {
             InstanceState(state => state.CurrentState);
         }
-        
+
     }
 
 }
