@@ -45,6 +45,22 @@
               "target": "Package",
               "version": "[7.3.1, )"
             },
+            "MassTransit.AspNetCore": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "MassTransit.MongoDB": {
+              "target": "Package",
+              "version": "[7.2.4, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[7.2.4, )"
+            },
+            "Play.Common": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
