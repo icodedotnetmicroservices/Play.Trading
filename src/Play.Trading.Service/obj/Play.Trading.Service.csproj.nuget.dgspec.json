@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[7.2.4, )"
             },
+            "Play.Catalog.Contracts": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "Play.Common": {
               "target": "Package",
               "version": "[1.0.4, )"

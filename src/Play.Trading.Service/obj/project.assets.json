@@ -570,6 +570,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Play.Catalog.Contracts/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Play.Catalog.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Play.Catalog.Contracts.dll": {}
+        }
+      },
       "Play.Common/1.0.4": {
         "type": "package",
         "dependencies": {
@@ -1680,6 +1689,17 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "Play.Catalog.Contracts/1.0.1": {
+      "sha512": "c4K191zuocJpGPGHRZjiOeAYgR7CuTj4qUkE4l91jSU6Ey6PHOPJlKHF9MDj1FEVERrCfa49tsNgRZ7+bW66cw==",
+      "type": "package",
+      "path": "play.catalog.contracts/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net5.0/Play.Catalog.Contracts.dll",
+        "play.catalog.contracts.1.0.1.nupkg.sha512",
+        "play.catalog.contracts.nuspec"
+      ]
+    },
     "Play.Common/1.0.4": {
       "sha512": "Ef1uDifmTQ9z+rrFFL5TS9x6N9PSChOWyB3BDEoYg/mlTSiHI4GrIJwTV1FlaUSgcF0zskuEQSZ0Mf3lAkTZog==",
       "type": "package",
@@ -2285,6 +2305,7 @@
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.MongoDB >= 7.2.4",
       "MassTransit.RabbitMQ >= 7.2.4",
+      "Play.Catalog.Contracts >= 1.0.1",
       "Play.Common >= 1.0.4",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -2344,6 +2365,10 @@
           "MassTransit.RabbitMQ": {
             "target": "Package",
             "version": "[7.2.4, )"
+          },
+          "Play.Catalog.Contracts": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "Play.Common": {
             "target": "Package",
