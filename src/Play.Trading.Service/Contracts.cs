@@ -8,4 +8,6 @@ namespace Play.Trading.Service.Contracts
         int Quantity,
         Guid CorrelationId
     );
+
+    public record GetPurchaseState(Guid CorrelationId);
 }

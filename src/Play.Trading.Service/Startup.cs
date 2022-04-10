@@ -37,7 +37,12 @@ namespace Play.Trading.Service
 
             AddMassTransit(services);
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.SuppressAsyncSuffixInActionNames = false;
+            })
+            .AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Play.Trading.Service", Version = "v1" });
@@ -86,6 +91,8 @@ namespace Play.Trading.Service
             });
 
             services.AddMassTransitHostedService();
+
+            services.AddGenericRequestClient();
         }
     }
 }
