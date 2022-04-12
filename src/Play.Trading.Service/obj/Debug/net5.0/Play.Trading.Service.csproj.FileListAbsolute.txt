@@ -73,3 +73,4 @@ C:\Projects\Play.Trading\src\Play.Trading.Service\obj\Debug\net5.0\Play.Trading.
 C:\Projects\Play.Trading\src\Play.Trading.Service\obj\Debug\net5.0\ref\Play.Trading.Service.dll
 C:\Projects\Play.Trading\src\Play.Trading.Service\bin\Debug\net5.0\Play.Catalog.Contracts.dll
 C:\Projects\Play.Trading\src\Play.Trading.Service\bin\Debug\net5.0\Play.Inventory.Contracts.dll
+C:\Projects\Play.Trading\src\Play.Trading.Service\bin\Debug\net5.0\Play.Identity.Contracts.dll

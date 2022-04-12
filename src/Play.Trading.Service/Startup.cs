@@ -18,6 +18,7 @@ using Play.Common.Identity;
 using Play.Common.MassTransit;
 using Play.Common.MongoDB;
 using Play.Common.Settings;
+using Play.Identity.Contracts;
 using Play.Inventory.Contracts;
 using Play.Trading.Service.Entities;
 using Play.Trading.Service.Exceptions;
@@ -110,6 +111,7 @@ namespace Play.Trading.Service
 
             // As soon as the microservice loads, it's going to know that it needs to map any commnand
             EndpointConvention.Map<GrantItems>(new Uri(queueSettings.GrantItemsQueueAddress));
+            EndpointConvention.Map<DebitGil>(new Uri(queueSettings.DebitGilQueueAddress));
 
             services.AddMassTransitHostedService();
 

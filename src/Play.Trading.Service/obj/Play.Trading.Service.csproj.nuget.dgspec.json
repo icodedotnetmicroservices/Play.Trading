@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[1.0.4, )"
             },
+            "Play.Identity.Contracts": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Play.Inventory.Contracts": {
               "target": "Package",
               "version": "[1.0.0, )"

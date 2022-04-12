@@ -1,5 +1,6 @@
 using System;
 using Automatonymous;
+using Play.Identity.Contracts;
 using Play.Inventory.Contracts;
 using Play.Trading.Service.Activities;
 using Play.Trading.Service.Contracts;
@@ -17,6 +18,8 @@ namespace Play.Trading.Service.StateMachines
         public Event<GetPurchaseState> GetPurchaseState { get; }
         public Event<InventoryItemsGranted> InventoryItemsGranted { get; }
 
+        public Event<GilDebited> GilDebited { get; set; }
+
         public PurchaseStateMachine()
         {
             InstanceState(state => state.CurrentState);
@@ -24,6 +27,7 @@ namespace Play.Trading.Service.StateMachines
             ConfigureInitialState();
             ConfigureAny();
             ConfigureAccepted();
+            ConfigureItemsGranted();
         }
 
         private void ConfigureEvents()
@@ -31,6 +35,7 @@ namespace Play.Trading.Service.StateMachines
             Event(() => PurchaseRequested);
             Event(() => GetPurchaseState);
             Event(() => InventoryItemsGranted);
+            Event(() => GilDebited);
         }
 
         private void ConfigureInitialState()
@@ -66,11 +71,30 @@ namespace Play.Trading.Service.StateMachines
         {
             During(Accepted,
             When(InventoryItemsGranted)
-            .Then(context => 
+            .Then(context =>
             {
                 context.Instance.LastUpdated = DateTimeOffset.UtcNow;
             })
+            .Send(context => new DebitGil(
+                    context.Instance.UserId,
+                    context.Instance.PurchaseTotal,
+                    context.Instance.CorrelationId
+
+                ))
             .TransitionTo(ItemsGranted));
+        }
+
+        private void ConfigureItemsGranted()
+        {
+            During(ItemsGranted,
+            When(GilDebited)
+                .Then(context =>
+                {
+                    context.Instance.LastUpdated = DateTimeOffset.UtcNow;
+                })
+                .TransitionTo(Completed)
+            );
+
         }
         private void ConfigureAny()
         {
