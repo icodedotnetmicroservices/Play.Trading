@@ -91,7 +91,11 @@ namespace Play.Trading.Service
 
                 });
                 configure.AddConsumers(Assembly.GetEntryAssembly());
-                configure.AddSagaStateMachine<PurchaseStateMachine, PurchaseState>()
+                configure.AddSagaStateMachine<PurchaseStateMachine, PurchaseState>(sagaConfigurator =>
+                {
+                    // Always use the in-memory outbox when creating saga state machines with MassTransit for consistent behavior.
+                    sagaConfigurator.UseInMemoryOutbox();
+                })
                         .MongoDbRepository(r =>
                         {
                             var servicesSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
