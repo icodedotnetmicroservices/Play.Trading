@@ -112,6 +112,7 @@ namespace Play.Trading.Service
             // As soon as the microservice loads, it's going to know that it needs to map any commnand
             EndpointConvention.Map<GrantItems>(new Uri(queueSettings.GrantItemsQueueAddress));
             EndpointConvention.Map<DebitGil>(new Uri(queueSettings.DebitGilQueueAddress));
+            EndpointConvention.Map<SubtractItems>(new Uri(queueSettings.SubtractItemsQueueAddress));
 
             services.AddMassTransitHostedService();
 
