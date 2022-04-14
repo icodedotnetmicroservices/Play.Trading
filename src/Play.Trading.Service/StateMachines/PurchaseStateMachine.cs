@@ -31,6 +31,7 @@ namespace Play.Trading.Service.StateMachines
             ConfigureAccepted();
             ConfigureItemsGranted();
             ConfigureFaulted();
+            ConfigureCompleted();
         }
 
         private void ConfigureEvents()
@@ -76,6 +77,7 @@ namespace Play.Trading.Service.StateMachines
         private void ConfigureAccepted()
         {
             During(Accepted,
+            Ignore(PurchaseRequested),
             When(InventoryItemsGranted)
             .Then(context =>
             {
@@ -101,25 +103,27 @@ namespace Play.Trading.Service.StateMachines
         private void ConfigureItemsGranted()
         {
             During(ItemsGranted,
-            When(GilDebited)
-                .Then(context =>
-                {
-                    context.Instance.LastUpdated = DateTimeOffset.UtcNow;
-                })
-                .TransitionTo(Completed),
-            When(DebitGilFaulted)
-                .Send(context => new SubtractItems(
-                    context.Instance.UserId,
-                    context.Instance.ItemId,
-                    context.Instance.Quantity,
-                    context.Instance.CorrelationId
-                ))
-                .Then(context =>
-                {
-                    context.Instance.ErrorMessage = context.Data.Exceptions[0].Message;
-                    context.Instance.LastUpdated = DateTimeOffset.UtcNow;
-                })
-                .TransitionTo(Faulted)
+                Ignore(PurchaseRequested),
+                Ignore(InventoryItemsGranted),
+                When(GilDebited)
+                    .Then(context =>
+                    {
+                        context.Instance.LastUpdated = DateTimeOffset.UtcNow;
+                    })
+                    .TransitionTo(Completed),
+                When(DebitGilFaulted)
+                    .Send(context => new SubtractItems(
+                        context.Instance.UserId,
+                        context.Instance.ItemId,
+                        context.Instance.Quantity,
+                        context.Instance.CorrelationId
+                    ))
+                    .Then(context =>
+                    {
+                        context.Instance.ErrorMessage = context.Data.Exceptions[0].Message;
+                        context.Instance.LastUpdated = DateTimeOffset.UtcNow;
+                    })
+                    .TransitionTo(Faulted)
             );
 
         }
@@ -127,6 +131,15 @@ namespace Play.Trading.Service.StateMachines
         private void ConfigureFaulted()
         {
             During(Faulted,
+            Ignore(PurchaseRequested),
+            Ignore(InventoryItemsGranted),
+            Ignore(GilDebited)
+            );
+        }
+
+        private void ConfigureCompleted()
+        {
+            During(Completed,
             Ignore(PurchaseRequested),
             Ignore(InventoryItemsGranted),
             Ignore(GilDebited)
