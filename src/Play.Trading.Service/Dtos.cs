@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Play.Trading.Service.Dtos
@@ -17,5 +18,18 @@ namespace Play.Trading.Service.Dtos
         string Reason,
         DateTimeOffset Received,
         DateTimeOffset LastUpdated
+    );
+
+    public record StoreItemDto(
+        Guid Id,
+        string Name,
+        String Description,
+        decimal Price,
+        int OwnedQuantity
+    );
+
+    public record StoreDto(
+        IEnumerable<StoreItemDto> Items,
+        decimal UserGil
     );
 }
