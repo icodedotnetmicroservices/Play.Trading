@@ -597,7 +597,7 @@
           "lib/net5.0/Play.Common.dll": {}
         }
       },
-      "Play.Identity.Contracts/1.0.0": {
+      "Play.Identity.Contracts/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net5.0/Play.Identity.Contracts.dll": {}
@@ -606,7 +606,7 @@
           "lib/net5.0/Play.Identity.Contracts.dll": {}
         }
       },
-      "Play.Inventory.Contracts/1.0.0": {
+      "Play.Inventory.Contracts/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net5.0/Play.Inventory.Contracts.dll": {}
@@ -1729,25 +1729,25 @@
         "play.common.nuspec"
       ]
     },
-    "Play.Identity.Contracts/1.0.0": {
-      "sha512": "kyAz12FJKWF4Q2U7PWHKyCTBVBQ74R8NoFCPG+K/AhJfADHOHBNlFvvYCc3Ei6sg94hRTQtZFt4JVopybRq0ww==",
+    "Play.Identity.Contracts/1.0.1": {
+      "sha512": "mX+AbVCacVqdKzNhvMJaaD21En5fXnf+AWX1v8+ysBPolZxLm53JZD98r/y6KP9fCe6WnOeRq1/MJyy62q1egQ==",
       "type": "package",
-      "path": "play.identity.contracts/1.0.0",
+      "path": "play.identity.contracts/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net5.0/Play.Identity.Contracts.dll",
-        "play.identity.contracts.1.0.0.nupkg.sha512",
+        "play.identity.contracts.1.0.1.nupkg.sha512",
         "play.identity.contracts.nuspec"
       ]
     },
-    "Play.Inventory.Contracts/1.0.0": {
-      "sha512": "gR4AOeNg/Nhaef5NL85VZhYMWd74sTkfO0j51EOXJYkF6a/56691b6tScrYo+uRkZ4fg17fen2cOjL6FUxbRqg==",
+    "Play.Inventory.Contracts/1.0.1": {
+      "sha512": "ZhCPU6b9g55JsxxyxIXRfzyXF9ExMjnxkvM/mhh78IaFGdYPbQDY7PqCol73nQE3q3QO20Pc9xLeYEVmFmUVnw==",
       "type": "package",
-      "path": "play.inventory.contracts/1.0.0",
+      "path": "play.inventory.contracts/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net5.0/Play.Inventory.Contracts.dll",
-        "play.inventory.contracts.1.0.0.nupkg.sha512",
+        "play.inventory.contracts.1.0.1.nupkg.sha512",
         "play.inventory.contracts.nuspec"
       ]
     },
@@ -2347,8 +2347,8 @@
       "MassTransit.RabbitMQ >= 7.2.4",
       "Play.Catalog.Contracts >= 1.0.1",
       "Play.Common >= 1.0.4",
-      "Play.Identity.Contracts >= 1.0.0",
-      "Play.Inventory.Contracts >= 1.0.0",
+      "Play.Identity.Contracts >= 1.0.1",
+      "Play.Inventory.Contracts >= 1.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -2358,11 +2358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\Play.Trading.Service.csproj",
+      "projectUniqueName": "c:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\Play.Trading.Service.csproj",
       "projectName": "Play.Trading.Service",
-      "projectPath": "C:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\Play.Trading.Service.csproj",
+      "projectPath": "c:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\Play.Trading.Service.csproj",
       "packagesPath": "C:\\Users\\13218\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\obj\\",
+      "outputPath": "c:\\Projects\\Play.Trading\\src\\Play.Trading.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\13218\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2418,11 +2418,11 @@
           },
           "Play.Identity.Contracts": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Play.Inventory.Contracts": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -41,6 +41,8 @@ namespace Play.Trading.Service
         {
             services.AddMongo()
                     .AddMongoRepository<CatalogItem>("catalogitems")
+                    .AddMongoRepository<InventoryItem>("inventoryitems")
+                    .AddMongoRepository<ApplicationUser>("users")
                     .AddJwtBearerAuthentication();
 
             AddMassTransit(services);
