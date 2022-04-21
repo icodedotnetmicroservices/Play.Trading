@@ -579,7 +579,7 @@
           "lib/net5.0/Play.Catalog.Contracts.dll": {}
         }
       },
-      "Play.Common/1.0.4": {
+      "Play.Common/1.0.5": {
         "type": "package",
         "dependencies": {
           "MassTransit.AspNetCore": "7.3.1",
@@ -1718,14 +1718,14 @@
         "play.catalog.contracts.nuspec"
       ]
     },
-    "Play.Common/1.0.4": {
-      "sha512": "Ef1uDifmTQ9z+rrFFL5TS9x6N9PSChOWyB3BDEoYg/mlTSiHI4GrIJwTV1FlaUSgcF0zskuEQSZ0Mf3lAkTZog==",
+    "Play.Common/1.0.5": {
+      "sha512": "9zfXE4Scltnki5Y0BlYSJxLhiQ8Gl7+cZsXZE8mvSWSqMYqyL3M3EuI4sgwESzghvxD1K807gjAdFiByVNvRyA==",
       "type": "package",
-      "path": "play.common/1.0.4",
+      "path": "play.common/1.0.5",
       "files": [
         ".nupkg.metadata",
         "lib/net5.0/Play.Common.dll",
-        "play.common.1.0.4.nupkg.sha512",
+        "play.common.1.0.5.nupkg.sha512",
         "play.common.nuspec"
       ]
     },
@@ -2346,7 +2346,7 @@
       "MassTransit.MongoDB >= 7.2.4",
       "MassTransit.RabbitMQ >= 7.2.4",
       "Play.Catalog.Contracts >= 1.0.1",
-      "Play.Common >= 1.0.4",
+      "Play.Common >= 1.0.5",
       "Play.Identity.Contracts >= 1.0.1",
       "Play.Inventory.Contracts >= 1.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -2414,7 +2414,7 @@
           },
           "Play.Common": {
             "target": "Package",
-            "version": "[1.0.4, )"
+            "version": "[1.0.5, )"
           },
           "Play.Identity.Contracts": {
             "target": "Package",
