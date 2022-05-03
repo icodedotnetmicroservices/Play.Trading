@@ -97,11 +97,10 @@ namespace Play.Trading.Service
         {
             services.AddMassTransit(configure =>
             {
-                configure.UsingPlayEconomyRabbitMq(retryConfigurator =>
+                configure.UsingPlayEconomMessageBroker(Configuration, retryConfigurator =>
                 {
                     retryConfigurator.Interval(3, TimeSpan.FromSeconds(5));
                     retryConfigurator.Ignore(typeof(UnknownItemException));
-
                 });
                 configure.AddConsumers(Assembly.GetEntryAssembly());
                 configure.AddSagaStateMachine<PurchaseStateMachine, PurchaseState>(sagaConfigurator =>
