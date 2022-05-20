@@ -1,0 +1,14 @@
+microserviceName: "trading"
+
+image:
+  repository: acrplayeconomy.azurecr.io/play.trading
+  tag: 1.0.2
+
+envVariables:
+  IdentityServerSettings__Clients__0__RedirectUris__0: https://playeconomy.centralus.cloudapp.azure.com/authentication/login-callback
+  IdentityServerSettings__Clients__0__PostLogoutRedirectUris__0: https://playeconomy.centralus.cloudapp.azure.com/authentication/logout-callback
+  ServiceSettings__Authority: https://playeconomy.centralus.cloudapp.azure.com/identity-svc
+
+container:
+  port: 5006
+
