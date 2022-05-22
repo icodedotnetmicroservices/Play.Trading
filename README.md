@@ -55,6 +55,7 @@ kubectl apply -f ./kubernetes/trading.yaml -n $namespace
 ```
 
 ## Install the Helm Chart
+
 ```powershell
 $helmUser=[guid]::Empty.Guid
 $helmPassword= az acr login --name acr$appname --expose-token --output tsv --query accessToken
@@ -64,5 +65,10 @@ $chartVersion="0.1.0"
 helm registry login "acr$appname.azurecr.io" --username $helmUser --password $helmPassword
 helm upgrade trading-service oci://acr$appname.azurecr.io/helm/microservice --version $chartVersion -f .\helm\values.yaml -n $namespace --install
 ```
+
 ## Required repository secrets for Github workflow
+
 GH_PAT: Created in Github user profile --> Settings -- Developer Settings --> Personal Access Token
+AZURE_CLIENT_ID: From AAD App Registration
+AZURE_SUBSCRIPTION_ID: From Azure Portal Subscription
+AZURE_TENANT_ID: From ADD properties page
